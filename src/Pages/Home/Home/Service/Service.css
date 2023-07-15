@@ -1,0 +1,16 @@
+.single-service{
+    border: 1px solid #302b2b;
+    border-radius: 7px;
+    padding: 10px;
+}
+.single-service img{
+width: 100%;
+}
+.btn{
+    background-color: rgb(152, 245, 245);
+    padding: 7px;
+    border-radius: 10px;
+    margin-left: 33.33%;
+}
+
+ 

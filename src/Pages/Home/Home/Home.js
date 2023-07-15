@@ -1,5 +1,7 @@
 import React from 'react'
 import  Services  from '../Services/Services'
+import Experts from '../Experts/Experts'
+
 
 
 const Home = () => {
@@ -7,6 +9,7 @@ const Home = () => {
     <div>
         <h1>Home</h1>
             <Services></Services>
+            <Experts></Experts>
      </div>
   )
 }
