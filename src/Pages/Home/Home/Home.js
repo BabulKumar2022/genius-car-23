@@ -1,13 +1,14 @@
 import React from 'react'
 import  Services  from '../Services/Services'
 import Experts from '../Experts/Experts'
+import Banner from '../Banner/Banner'
 
 
 
 const Home = () => {
   return (
     <div>
-        <h1>Home</h1>
+        <Banner></Banner>
             <Services></Services>
             <Experts></Experts>
      </div>
