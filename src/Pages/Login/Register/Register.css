@@ -10,6 +10,6 @@
     font-size: 16px;
     margin-bottom: 5px;
 }
-.register,.login-heading{
+.register,.login-heading, .service-detail-heading{
     margin-top: 60px;
 }
