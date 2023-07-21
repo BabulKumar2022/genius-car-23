@@ -11,9 +11,9 @@ const SocialLogin = () => {
     const [signInWithGithub, user1,  error1] = useSignInWithGithub(auth);
     const navigate = useNavigate();
     let errorElement;
-    if(error || error1){
-        errorElement = <div className=""><p className='text-danger'>Error: {error?.message} {error1?.message}</p> </div>
-    }
+   if(error || error1){
+        errorElement = <p className='text-danger'>Error: {error?.message} {error1?.message}</p>
+    } 
     if(user || user1){
         navigate('/home')
     }
