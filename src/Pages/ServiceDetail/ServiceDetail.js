@@ -2,20 +2,23 @@ import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async';
 import { Link, useParams } from 'react-router-dom'
 
-const ServiceDetail = ({match}) => {
-    const {sId}= useParams();
-    // const [singleService, setSingleService] = useState([]);
+const ServiceDetail = () => {
+    const {serviceId} = useParams();
+    const [service, setService] = useState({});
    
-    // useEffect(()=>{
-    //   fetch(`http://localhost:3000/service/${match.params.sid}`)
-    //   .then(res => res.json())
-    //   .then(data => setSingleService(data))
-    //   console.log(match)
-    // },[])
+    useEffect(()=>{
+      const uri = `http://localhost:5000/service/${serviceId}`;
+      fetch(uri)
+      .then(res => res.json())
+      .then(data => setService(data))
+      
+    },[])
   return (
     <div>
       <Helmet><title>Service Detail</title> </Helmet>
-      <h1 className='service-detail-heading'>ServiceDetail: {sId} </h1> 
+      <h1 className='service-detail-heading'>Service name: {service.name} </h1> 
+      <h1 className='service-detail-heading'>Service Price: {service.price} </h1> 
+     <img src={service.img} alt="" srcset="" />
       {/* <h2>{singleService.name}</h2> */}
       <div className="">
 

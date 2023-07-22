@@ -12,21 +12,35 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import Checkout from './Pages/Checkout/Checkout';
 import RequiteAuth from './Pages/Login/Register/RequiteAuth/RequiteAuth';
+import AddService from './Pages/AddService/AddService';
 
 function App() {
   return (
     <div >
    <Header></Header>
       <Routes>
-        <Route path="/" element={<Home/>}></Route>
-        <Route path="/home" element={<Home/>}></Route>
+        <Route path="/" element={
+            <RequiteAuth> 
+              <Home/>
+            </RequiteAuth>
+        }></Route>
+        <Route path="/home" element={
+            <RequiteAuth> 
+            <Home/>
+          </RequiteAuth>
+        }></Route>
         <Route path='/service/:sId' element={<ServiceDetail/>}></Route>
         <Route path="/about" element={<About/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/register" element={<Register/>}></Route>
         <Route path="/checkout" element={  
-          <RequiteAuth>
+          <RequiteAuth> 
           <Checkout/>
+          </RequiteAuth>
+        }></Route>
+        <Route path="/addService" element={  
+          <RequiteAuth> 
+          <AddService/>
           </RequiteAuth>
         }></Route>
         <Route path="*" element={<NotFound/>}></Route>
