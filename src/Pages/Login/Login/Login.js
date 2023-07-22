@@ -6,6 +6,7 @@ import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -49,6 +50,7 @@ const Login = () => {
 
   return (
     <div className="container w-50 mx-auto">
+      <Helmet><title>Login</title> </Helmet>
       <h1 className="login-heading">Please Login</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">

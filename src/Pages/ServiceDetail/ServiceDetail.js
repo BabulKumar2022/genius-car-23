@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet-async';
 import { Link, useParams } from 'react-router-dom'
 
 const ServiceDetail = ({match}) => {
@@ -13,6 +14,7 @@ const ServiceDetail = ({match}) => {
     // },[])
   return (
     <div>
+      <Helmet><title>Service Detail</title> </Helmet>
       <h1 className='service-detail-heading'>ServiceDetail: {sId} </h1> 
       {/* <h2>{singleService.name}</h2> */}
       <div className="">

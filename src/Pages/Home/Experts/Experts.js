@@ -9,6 +9,7 @@ import expert6 from '../../../images/experts/expert-6.png'
 import Expert from '../Expert/Expert'
 
 
+
 const experts = [
     {id:1, name: 'will Smith', img: expert1},
     {id:2, name: 'william Devid', img: expert2},
@@ -22,6 +23,7 @@ const experts = [
 const Experts = () => {
   return (
     <div id="experts" className='container'>
+      
       <h1 className='text-primary text-center'>Experts</h1>  
       <div className="row">
         {

@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import {useCreateUserWithEmailAndPassword, useUpdateProfile} from 'react-firebase-hooks/auth'
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { Helmet } from 'react-helmet-async';
 
 
 const Register = () => {
@@ -40,6 +41,7 @@ const Register = () => {
   }
   return (
     <div className='register-form'>
+      <Helmet><title>Register</title> </Helmet>
      <h1 className='register'>Register</h1> 
      <form onSubmit={handleRegister}>
         <input type="text" name="name" id="" placeholder='Your Name' />
