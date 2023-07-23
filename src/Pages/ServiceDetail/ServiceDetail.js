@@ -11,6 +11,7 @@ const ServiceDetail = () => {
       fetch(uri)
       .then(res => res.json())
       .then(data => setService(data))
+    
       
     },[])
   return (

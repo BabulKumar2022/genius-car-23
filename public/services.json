@@ -1,41 +1,40 @@
-[
-    {"id": 1,
-     "name": "Oil change",
+[   
+    {"id":1,
+    "name": "Oil change",
     "price": 700,
     "description": "The completed services are usually recorded in a service book upon completion of each service",
     "img": "https://i.ibb.co/8b5yzMY/11.png"
     },
 
-    {"id": 2,
-     "name": "Mobile change",
+    {"id":2,
+    "name": "Mobile change",
     "price": 600,
     "description": "The actual schedule of car maintenance varies depending on the year, make, and model of a car, its driving conditions, and driver behavior",
     "img": "https://i.ibb.co/rvbSC1M/22.png"
     },
     
-    {"id": 3,
-     "name": "Engin Diagnostic",
+    {"id":3,
+    "name": "Engin Diagnostic",
     "price": 800,
     "description": "The actual schedule of car maintenance varies depending on the year, make, and model of a car, its driving conditions, and driver behavior",
     "img": "https://i.ibb.co/MBJyMgm/33.png"
     },
 
-    {"id": 4,
-     "name": "Wheel Alignment",
+    {"id":4,
+    "name": "Wheel Alignment",
     "price": 300,
     "description": "The actual schedule of car maintenance varies depending on the year, make, and model of a car, its driving conditions, and driver behavior",
     "img": "https://i.ibb.co/2NKPVT3/44.png"
     },
 
-    {"id": 5,
-     "name": "Mobile change",
+    {"id":5,
+    "name": "Mobile change",
     "price": 200,
     "description": "The actual schedule of car maintenance varies depending on the year, make, and model of a car, its driving conditions, and driver behavior",
     "img": "https://i.ibb.co/CwMKQWr/55.png"
     },
 
-    {"id": 6,
-     "name": "Mobile change",
+    {"id":6,"name": "Mobile change",
     "price": 400,
     "description": "The actual schedule of car maintenance varies depending on the year, make, and model of a car, its driving conditions, and driver behavior",
     "img": "https://i.ibb.co/TYS77tn/66.png"
