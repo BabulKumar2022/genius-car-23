@@ -14,6 +14,7 @@ import Checkout from './Pages/Checkout/Checkout';
 import RequiteAuth from './Pages/Login/Register/RequiteAuth/RequiteAuth';
 import AddService from './Pages/AddService/AddService';
 import Manege from './Pages/Manege/Manege';
+import Orders from './Pages/Orders/Orders';
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
         <Route path="/about" element={<About/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/register" element={<Register/>}></Route>
-        <Route path="/checkout" element={  
+        <Route path="/checkout/:sId" element={  
           <RequiteAuth> 
           <Checkout/>
           </RequiteAuth>
@@ -47,6 +48,11 @@ function App() {
         <Route path="/manege" element={  
           <RequiteAuth> 
           <Manege/>
+          </RequiteAuth>
+        }></Route>
+        <Route path="/orders" element={  
+          <RequiteAuth> 
+          <Orders/>
           </RequiteAuth>
         }></Route>
         <Route path="*" element={<NotFound/>}></Route>
