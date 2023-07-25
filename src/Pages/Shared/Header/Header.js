@@ -15,8 +15,8 @@ const Header = () => {
     navigate('/login')
   }
   return (
-    <div>
-       <Navbar  collapseOnSelect expand="lg" fixed='top' className="bg-primary">
+    <div className=''>
+       <Navbar  collapseOnSelect expand="lg" fixed='top' className="bg-primary text-light">
       <Container>
         <Navbar.Brand as={Link} to="/">
         <img src={logo} height="40px" alt=""/>
@@ -44,7 +44,7 @@ const Header = () => {
             <Nav.Link as={Link} to="about">About</Nav.Link>
             {
               user && <>
-              <Nav.Link as={Link} to="orders">Orders</Nav.Link>
+              <Nav.Link as={Link} to="orders">User-Orders</Nav.Link>
               <Nav.Link as={Link} to="addService">AddService</Nav.Link>
               <Nav.Link as={Link} to="manege">Manege</Nav.Link>
               </>

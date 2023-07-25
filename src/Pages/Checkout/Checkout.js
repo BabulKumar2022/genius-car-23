@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useParams } from 'react-router-dom';
+import {  useNavigate, useParams } from 'react-router-dom';
 import ServiceDetailHook from '../../ServiceDetailHook/ServiceDetailHook';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
@@ -8,7 +8,9 @@ import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 
+
 const Checkout = () => {
+    const navigate = useNavigate();
     const {sId} = useParams();
     const [service] = ServiceDetailHook(sId);
     const[user] = useAuthState(auth);
@@ -16,6 +18,7 @@ const Checkout = () => {
 
     //handle submit
     const handlePlaceOrder = event =>{
+     
         event.preventDefault();
         const order = {
             email: user.email,
@@ -30,6 +33,7 @@ const Checkout = () => {
             if(data.insertedId){
                 toast("Your order is Booked")
                 event.target.reset();
+                navigate(`/orders`)
             }
         })
     }
@@ -46,7 +50,7 @@ const Checkout = () => {
                 <input className='mb-2 w-100' type='text' disabled value={service.name} name='product' placeholder='Product Name' required/> 
                 <input className='mb-2 w-100' type='text' name='address' placeholder='Address' required/> 
                 <input className='mb-2 w-100' type='text' name='phone' placeholder='Phone Number' required/> 
-                <input className='btn btn-primary mb-2 mx-auto w-100' type='submit' value='Place Order' /> <br />
+                <input className='btn btn-primary mb-2 mx-auto w-100' type='submit' value='Place Order'  /> <br />
             </form>
         
            <ToastContainer/>
