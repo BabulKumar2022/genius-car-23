@@ -7,6 +7,7 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -16,12 +17,21 @@ const Login = () => {
 
   let from = location.state?.from.pathname || "/"
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    signInWithEmailAndPassword(email, password);
+    
+   await signInWithEmailAndPassword(email, password);
+   const {data} = await axios.post('http://localhost:5000/getToken', {email});
+    //  console.log(data)
+    localStorage.setItem('accessToken', data.accessToken);
+     navigate(from, {replace: true});
   };
+
+
+
+
   const [ signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
      
@@ -30,7 +40,7 @@ const Login = () => {
            errorElement = <p className='text-danger'>Error: {error?.message} </p>
        }
   if (user) {
-   navigate(from, {replace: true});
+  //  navigate(from, {replace: true});
   }
 
   const navigateRegister = (event) => {
