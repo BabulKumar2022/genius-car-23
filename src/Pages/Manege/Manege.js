@@ -1,6 +1,8 @@
 import React from 'react';
 import ServiceHooks from '../../ServiceHoks/ServiceHoks';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import './Manege.css'
 
 const Manege = () => {
     const [services, setServices] = ServiceHooks();
@@ -23,12 +25,35 @@ const url = `http://localhost:5000/service/${id}`
     return (
         <div>
             <Helmet><title>Manege Service </title> </Helmet>
-            <h1 className='service-detail-heading text-center'>Mange Services</h1>
-            {
-                services.map(service => <div key={service._id}>
-                    <h4>{service.name}<button onClick={()=> handleDelete(service._id)}>X</button> </h4>
-                </div>)
-            }
+            <h1 className='service-detail-heading text-center'>Manageable Services:{" "}{services.length}</h1>
+            <div className="w-75 mx-auto " style={{width: "auto"}}>
+                <table style={{width:1000}}>
+                    <thead >
+                        <tr>
+                        <th >Product Name</th>
+                        <th>Price</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                        </tr>
+                    </thead>
+                    {
+                        services.map(service => <tbody key={service._id}>
+                            <tr>
+                                <td>{service.name}</td>
+                                <td>{service.price}</td>
+                                <td>
+                                    <Link to={`/update/${service._id}`}>
+                                        <button className='mx-2 text-primary'>Update</button>
+                                    </Link> 
+                                </td>
+                                <td>
+                                    <button className='text-danger' onClick={()=> handleDelete(service._id)}>X</button>
+                                </td>
+                            </tr>
+                        </tbody>)
+                    }
+                 </table>
+            </div>
         </div>
     );
 };

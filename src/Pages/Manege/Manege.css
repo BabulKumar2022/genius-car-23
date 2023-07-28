@@ -1,0 +1,16 @@
+th{
+    border: 3px solid rgb(92, 55, 55);
+    text-align: center;
+    padding: 4px;
+    background-color: rgb(174, 238, 217);
+}
+td{
+    border: 2px solid rgb(122, 80, 80);
+    text-align: center;
+    padding: 4px;
+    background-color: rgb(145, 243, 243);
+    
+}
+table{
+    margin-bottom: 15px;
+}

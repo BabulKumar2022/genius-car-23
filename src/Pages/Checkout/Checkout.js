@@ -14,7 +14,7 @@ const Checkout = () => {
     const {sId} = useParams();
     const [service] = ServiceDetailHook(sId);
     const[user] = useAuthState(auth);
-    console.log(user)
+    // console.log(user)
 
     //handle submit
     const handlePlaceOrder = event =>{
@@ -27,6 +27,7 @@ const Checkout = () => {
             address: event.target.address.value,
             phone: event.target.phone.value,
         }
+        console.log(order)
         axios.post('http://localhost:5000/order', order)
         .then(response =>{
             const {data} = response;

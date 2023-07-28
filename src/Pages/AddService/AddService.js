@@ -1,6 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from "react-hook-form"
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const AddService = () => {
     const { register, handleSubmit } = useForm();
@@ -18,6 +20,7 @@ const AddService = () => {
         })
         .then(res => res.json())
         .then(result =>{
+            toast("Product added successfully");
             console.log(result)
         })
     }
@@ -29,12 +32,13 @@ const AddService = () => {
             <h1 className='service-detail-heading'>Add a service</h1>
 
             <form className='d-flex flex-column p-4 ' onSubmit={handleSubmit(onSubmit)}>
-            <input className='mb-2' placeholder='Service Name' {...register("name")} />
+            <input className='mb-2' placeholder='Service/Product Name' {...register("name")} />
             <textarea className='mb-2' placeholder='Description' {...register("description")} />
             <input className='mb-2' placeholder='Price' type="number" {...register("price")} />
             <input className='mb-2' placeholder='Photo Url' type="text" {...register("img")} />
             <input className='mb-2'  type="submit" />
             </form>
+            <ToastContainer/>
         </div>
     );
 };
