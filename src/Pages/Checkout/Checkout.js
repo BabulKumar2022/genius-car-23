@@ -18,7 +18,7 @@ const Checkout = () => {
 
     //handle submit
     const handlePlaceOrder = event =>{
-     
+      
         event.preventDefault();
         const order = {
             email: user.email,
@@ -31,6 +31,8 @@ const Checkout = () => {
         axios.post('http://localhost:5000/order', order)
         .then(response =>{
             const {data} = response;
+            window.location.replace(data.url);
+            console.log(data)
             if(data.insertedId){
                 toast("Your order is Booked")
                 event.target.reset();
@@ -44,7 +46,8 @@ const Checkout = () => {
         <div className='w-50 mx-auto'>
             <Helmet><title>Checkout/order</title> </Helmet>
             <h1 className='checkout-heading'>Checkout/Order</h1>
-            <h3>Order Product Name: {service.name}</h3>
+            <h3> Product Name: {service.name}</h3>
+            <h3> Product Price: $ {service.price}</h3>
             <form onSubmit={handlePlaceOrder}>
                 <input className='mb-2 w-100' type='text' disabled value={user?.displayName} name='name' placeholder='Name' required/> 
                 <input className='mb-2 w-100' type='email' disabled value={user?.email} name='email' placeholder='Email' required/> 

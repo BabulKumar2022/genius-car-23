@@ -16,6 +16,7 @@ import AddService from './Pages/AddService/AddService';
 import Manege from './Pages/Manege/Manege';
 import Orders from './Pages/Orders/Orders';
 import Update from './Pages/Update/Update';
+import PaymentSuccess from './Pages/PaymentSuccess/PaymentSuccess';
 
 function App() {
   return (
@@ -39,6 +40,11 @@ function App() {
         <Route path="/checkout/:sId" element={  
           <RequiteAuth> 
           <Checkout/>
+          </RequiteAuth>
+        }></Route>
+        <Route path="/payment/success/:tranId" element={  
+          <RequiteAuth> 
+         <PaymentSuccess/>
           </RequiteAuth>
         }></Route>
         <Route path="/addService" element={  
