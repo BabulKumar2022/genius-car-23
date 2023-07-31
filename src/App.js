@@ -17,6 +17,7 @@ import Manege from './Pages/Manege/Manege';
 import Orders from './Pages/Orders/Orders';
 import Update from './Pages/Update/Update';
 import PaymentSuccess from './Pages/PaymentSuccess/PaymentSuccess';
+import PaymentFail from './Pages/Paymentfail/PaymentFail';
 
 function App() {
   return (
@@ -45,6 +46,11 @@ function App() {
         <Route path="/payment/success/:tranId" element={  
           <RequiteAuth> 
          <PaymentSuccess/>
+          </RequiteAuth>
+        }></Route>
+        <Route path="/payment/fail/:tranId" element={  
+          <RequiteAuth> 
+         <PaymentFail/>
           </RequiteAuth>
         }></Route>
         <Route path="/addService" element={  
